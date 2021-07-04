@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface StyledOutlinedInputProps {
   fullWidth?: boolean;
   placeholder?: string;
   value?: string;

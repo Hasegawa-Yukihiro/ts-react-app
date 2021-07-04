@@ -1,17 +1,10 @@
 import * as React from "react";
 
-//  styles
-import { Wrapper } from "./styles";
-
 //  atomic component
-import { StyledOutlinedInput } from "~views/Components/Atoms/StyledOutlinedInput";
+import { SignInTemplate } from "~views/Components/Templates/SignInTemplate";
 
 const SignIn: React.FC = () => {
-  return (
-    <Wrapper>
-      <StyledOutlinedInput placeholder={"メールアドレス"} />
-    </Wrapper>
-  );
+  return <SignInTemplate />;
 };
 
 export default SignIn;

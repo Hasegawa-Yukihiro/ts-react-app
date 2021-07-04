@@ -3,7 +3,7 @@ import * as React from "react";
 import { StyledOutlined } from "./styles";
 
 import { FormControl } from "@material-ui/core";
-import { InputProps } from "./types";
+import { StyledOutlinedInputProps } from "./types";
 
 /**
  * inputのコンポーネント
@@ -13,7 +13,7 @@ import { InputProps } from "./types";
  * @param {string} name - input要素の名前属性
  * @function changeValue 値が変更された時のハンドラ
  */
-const StyledOutlinedInput: React.FC<InputProps> = props => {
+const StyledOutlinedInput: React.FC<StyledOutlinedInputProps> = props => {
   return (
     <FormControl variant={"outlined"} fullWidth={props.fullWidth}>
       <StyledOutlined
