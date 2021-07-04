@@ -17,6 +17,7 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
           fullWidth
           placeholder={"メールアドレス"}
           name={"email"}
+          value={props.emailValue}
         />
       </InputWrapper>
       <InputWrapper>
@@ -24,6 +25,7 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
           fullWidth
           placeholder={"パスワード"}
           name={"text"}
+          value={props.passwordValue}
         />
       </InputWrapper>
     </Wrapper>
