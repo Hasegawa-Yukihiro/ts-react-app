@@ -13,9 +13,7 @@ export const useSignInForm = () => {
   }, []);
 
   const handler = useMemo(
-    () => ({
-      handleSubmitButtonClick
-    }),
+    () => ({ handleSubmitButtonClick }),
     [handleSubmitButtonClick]
   );
 
