@@ -11,7 +11,7 @@ import {
 
 export const Wrapper = styled.div(({ theme }) => {
   return {
-    width: "70%"
+    width: "50%"
   };
 });
 
