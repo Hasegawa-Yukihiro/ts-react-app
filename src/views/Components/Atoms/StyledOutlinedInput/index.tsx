@@ -1,12 +1,16 @@
 import * as React from "react";
 
+//  styles
 import { StyledOutlined } from "./styles";
 
+// theme lib
 import { FormControl } from "@material-ui/core";
+
+//  types
 import { StyledOutlinedInputProps } from "./types";
 
 /**
- * inputのコンポーネント
+ * inputのコンポーネント（ベース）
  * @param {boolean} fullWidth - trueの場合,コンテナの全幅を占める
  * @param {string} placeholder - ユーザーが値を入力する前に表示される短いヒント
  * @param {string} value - 入力値
@@ -14,13 +18,15 @@ import { StyledOutlinedInputProps } from "./types";
  * @function changeValue 値が変更された時のハンドラ
  */
 const StyledOutlinedInput: React.FC<StyledOutlinedInputProps> = props => {
+  const { fullWidth, placeholder, value, name, changeValue } = props;
+
   return (
-    <FormControl variant={"outlined"} fullWidth={props.fullWidth}>
+    <FormControl variant={"outlined"} fullWidth={fullWidth}>
       <StyledOutlined
-        placeholder={props.placeholder}
-        value={props.value}
-        name={props.name}
-        onChange={e => props.changeValue?.(e.target.value)}
+        placeholder={placeholder}
+        value={value}
+        name={name}
+        onChange={e => changeValue?.(e.target.value)}
       />
     </FormControl>
   );

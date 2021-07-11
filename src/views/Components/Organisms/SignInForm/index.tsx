@@ -1,7 +1,16 @@
 import * as React from "react";
 
+//  hooks
+import { useSignInForm } from "./hooks";
+
 //  styles
-import { InputWrapper, Wrapper } from "./styles";
+import {
+  StyledTypography,
+  InputWrapper,
+  Wrapper,
+  ButtonWrapper,
+  StyledButton
+} from "./styles";
 
 //  atomic component
 import { StyledOutlinedInput } from "~views/Components/Atoms/StyledOutlinedInput";
@@ -10,14 +19,19 @@ import { StyledOutlinedInput } from "~views/Components/Atoms/StyledOutlinedInput
 import { SignInFormProps } from "./types";
 
 export const SignInForm: React.FC<SignInFormProps> = props => {
+  const { emailValue, passwordValue } = props;
+  //  hooks
+  const { handler } = useSignInForm();
+
   return (
     <Wrapper>
+      <StyledTypography>テスト</StyledTypography>
       <InputWrapper>
         <StyledOutlinedInput
           fullWidth
           placeholder={"メールアドレス"}
           name={"email"}
-          value={props.emailValue}
+          value={emailValue}
         />
       </InputWrapper>
       <InputWrapper>
@@ -25,9 +39,18 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
           fullWidth
           placeholder={"パスワード"}
           name={"text"}
-          value={props.passwordValue}
+          value={passwordValue}
         />
       </InputWrapper>
+      <ButtonWrapper>
+        <StyledButton
+          variant="contained"
+          color="primary"
+          onClick={handler.handleSubmitButtonClick}
+        >
+          サインイン
+        </StyledButton>
+      </ButtonWrapper>
     </Wrapper>
   );
 };
