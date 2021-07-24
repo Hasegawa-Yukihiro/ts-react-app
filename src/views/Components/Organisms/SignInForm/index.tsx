@@ -1,4 +1,6 @@
 import * as React from "react";
+import axios from "axios";
+import { generateAxiosRequestConfig, generateUrl } from "~utils/function/api";
 
 //  hooks
 import { useSignInForm } from "./hooks";
@@ -12,7 +14,7 @@ import {
   StyledButton
 } from "./styles";
 
-//  atomic component
+//  component
 import { StyledOutlinedInput } from "~views/Components/Atoms/StyledOutlinedInput";
 
 // types
@@ -22,6 +24,15 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
   const { emailValue, passwordValue } = props;
   //  hooks
   const { handler } = useSignInForm();
+
+  const test = async () => {
+    const url = generateUrl("/aaa");
+    const config = generateAxiosRequestConfig();
+
+    const result = await axios.get(url, config);
+
+    return result;
+  };
 
   return (
     <Wrapper>
@@ -46,7 +57,7 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
         <StyledButton
           variant="contained"
           color="primary"
-          onClick={handler.handleSubmitButtonClick}
+          onClick={() => test()}
         >
           サインイン
         </StyledButton>

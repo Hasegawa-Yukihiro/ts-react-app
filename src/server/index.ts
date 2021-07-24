@@ -1,13 +1,13 @@
-import express, { Response, Request, Express } from "express";
+import chalk from "chalk";
+import http from "http";
+import app from "./routes/app";
 
-const app: Express = express();
+const port = process.env["PORT"] || 8080;
+const server = http.createServer(app());
 
-const port = process.env.PORT || 8080;
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
-});
-
-app.listen(port, () => {
-  console.log(`listening on *:${port}`);
+server.listen(port, () => {
+  console.log(new Date().toISOString());
+  console.log(
+    `${chalk.blueBright("Success Connected Server")} : PORT -> ${port}`
+  );
 });
