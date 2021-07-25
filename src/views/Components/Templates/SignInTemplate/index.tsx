@@ -12,7 +12,7 @@ import { SignInTemplateProps } from "./types";
 export const SignInTemplate: React.FC<SignInTemplateProps> = props => {
   return (
     <Wrapper>
-      <SignInForm />
+      <SignInForm {...props} />
     </Wrapper>
   );
 };
