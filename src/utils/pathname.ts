@@ -4,5 +4,8 @@ export const page: { [key: string]: { pathname: string } } = {
   },
   SignIn: {
     pathname: "/signIn"
+  },
+  SignUp: {
+    pathname: "/signUp"
   }
 };
