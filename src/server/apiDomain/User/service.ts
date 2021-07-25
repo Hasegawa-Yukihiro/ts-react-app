@@ -7,13 +7,13 @@ import { IUser } from "~apiDomain/User/types";
 // import { userOrder } from "./types";
 
 export class userDomainService extends BaseDomainService {
-  private crypto: Crypto;
+  // private crypto: Crypto;
   private userDomainRepository: UserDomainRepository;
 
   constructor(params: { userDomainRepository: UserDomainRepository }) {
     super({ className: "userDomainService" });
     this.userDomainRepository = params.userDomainRepository;
-    this.crypto = new Crypto();
+    // this.crypto = new Crypto();
   }
 
   /** ヘルスチェック */
