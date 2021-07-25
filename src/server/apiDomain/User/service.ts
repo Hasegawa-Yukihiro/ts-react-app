@@ -7,13 +7,13 @@ import { IUser } from "~apiDomain/User/types";
 // import { userOrder } from "./types";
 
 export class userDomainService extends BaseDomainService {
-  private crypto: Crypto;
+  // private crypto: Crypto;
   private userDomainRepository: UserDomainRepository;
 
   constructor(params: { userDomainRepository: UserDomainRepository }) {
     super({ className: "userDomainService" });
     this.userDomainRepository = params.userDomainRepository;
-    this.crypto = new Crypto();
+    // this.crypto = new Crypto();
   }
 
   /** ヘルスチェック */
@@ -26,10 +26,10 @@ export class userDomainService extends BaseDomainService {
   /** SignUp */
   async signUp(user: IUser): Promise<IUser> {
     //  idが既に利用されていないか確認
-    const idValidation = await this.userDomainRepository.findOne(
-      { id: user.id },
-      {}
-    );
+    // const idValidation = await this.userDomainRepository.findOne(
+    //   { id: user.id },
+    //   {}
+    // );
     // if (idValidation) {
     //   throw new ValidationError({
     //     id: {

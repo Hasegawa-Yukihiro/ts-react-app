@@ -1,6 +1,4 @@
 export interface IUser {
-  /** ID */
-  id: string;
   /** 姓 */
   lastName: string;
   /** 名 */
