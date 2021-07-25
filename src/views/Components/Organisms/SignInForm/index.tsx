@@ -1,8 +1,5 @@
 import * as React from "react";
 
-//  hooks
-import { useSignInForm } from "./hooks";
-
 //  styles
 import {
   StyledTypography,
@@ -12,16 +9,20 @@ import {
   StyledButton
 } from "./styles";
 
-//  atomic component
+//  component
 import { StyledOutlinedInput } from "~views/Components/Atoms/StyledOutlinedInput";
 
 // types
 import { SignInFormProps } from "./types";
 
 export const SignInForm: React.FC<SignInFormProps> = props => {
-  const { emailValue, passwordValue } = props;
-  //  hooks
-  const { handler } = useSignInForm();
+  const {
+    email,
+    password,
+    onEmailChange,
+    onPasswordChange,
+    onSubmitButtonClick
+  } = props;
 
   return (
     <Wrapper>
@@ -31,7 +32,8 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
           fullWidth
           placeholder={"メールアドレス"}
           name={"email"}
-          value={emailValue}
+          value={email}
+          changeValue={onEmailChange}
         />
       </InputWrapper>
       <InputWrapper>
@@ -39,14 +41,15 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
           fullWidth
           placeholder={"パスワード"}
           name={"text"}
-          value={passwordValue}
+          value={password}
+          changeValue={onPasswordChange}
         />
       </InputWrapper>
       <ButtonWrapper>
         <StyledButton
           variant="contained"
           color="primary"
-          onClick={handler.handleSubmitButtonClick}
+          onClick={onSubmitButtonClick}
         >
           サインイン
         </StyledButton>
