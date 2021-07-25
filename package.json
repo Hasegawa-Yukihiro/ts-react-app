@@ -8,7 +8,8 @@
     "start-server:dev": "run-p build:dev server-nodemon",
     "build:dev": "webpack --config ./webpack/webpack.config.dev.js",
     "build:prod": "webpack --config ./webpack/webpack.config.prod.js",
-    "server-nodemon": "nodemon src/server/index.ts"
+    "server-nodemon": "nodemon src/server/index.ts",
+    "check:types": "tsc --noemit"
   },
   "dependencies": {
     "@types/mongodb": "^3.6.20",

@@ -14,6 +14,8 @@ class Alias {
       { label: "lib", alias: "src/lib" },
       { label: "@types", alias: "src/@types" },
       { label: "views", alias: "src/views" },
+      { label: "controller", alias: "src/controller" },
+      { label: "factory", alias: "src/factory" },
       { label: "utils", alias: "src/utils" },
       { label: "src", alias: "src" }
     ];

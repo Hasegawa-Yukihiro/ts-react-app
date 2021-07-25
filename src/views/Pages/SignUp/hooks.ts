@@ -3,7 +3,13 @@ import { useCallback, useMemo, useState } from "react";
 //  hooks
 import { useHistory } from "react-router-dom";
 
+// domain
+import { UserDomainService } from "~domain/User";
+
 export const useSignUp = () => {
+  //  domain
+  const userDomainService = new UserDomainService();
+
   //  hooks
   const history = useHistory();
 
@@ -34,8 +40,18 @@ export const useSignUp = () => {
   }, []);
 
   /** submitハンドラ */
-  const handleSubmitButtonClick = useCallback(() => {
-    history.push("/");
+  const handleSubmitButtonClick = useCallback(async () => {
+    try {
+      await userDomainService.signUp({
+        email,
+        password,
+        lastName,
+        firstName
+      });
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const state = useMemo(

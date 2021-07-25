@@ -4,7 +4,6 @@ export function generateUrl(pathname: string) {
   const protocol = process.env["PROTOCOL"];
   const fqnd = process.env["API_FQND"];
 
-  console.log(`${protocol}://${fqnd}${pathname}`);
   return `${protocol}://${fqnd}${pathname}`;
 }
 

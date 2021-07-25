@@ -26,10 +26,10 @@ export class userDomainService extends BaseDomainService {
   /** SignUp */
   async signUp(user: IUser): Promise<IUser> {
     //  idが既に利用されていないか確認
-    const idValidation = await this.userDomainRepository.findOne(
-      { id: user.id },
-      {}
-    );
+    // const idValidation = await this.userDomainRepository.findOne(
+    //   { id: user.id },
+    //   {}
+    // );
     // if (idValidation) {
     //   throw new ValidationError({
     //     id: {

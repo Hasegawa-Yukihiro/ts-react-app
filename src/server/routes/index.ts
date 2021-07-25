@@ -5,5 +5,9 @@ export const routes = (app: Express): Express => {
     console.log(`get`);
   });
 
+  app.post("/user/sign-up", (req, res) => {
+    console.log(`get`);
+  });
+
   return app;
 };
