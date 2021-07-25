@@ -1,7 +1,7 @@
 import * as React from "react";
 
 //  hooks
-import { useSignInForm } from "./hooks";
+import { useSignUpForm } from "./hooks";
 
 //  styles
 import {
@@ -17,23 +17,26 @@ import {
 import { StyledOutlinedInput } from "~views/Components/Atoms/StyledOutlinedInput";
 
 // types
-import { SignInFormProps } from "./types";
+import { SignUpFormProps } from "./types";
 
-export const SignInForm: React.FC<SignInFormProps> = props => {
+export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const {
     email,
     password,
+    lastName,
+    firstName,
     onEmailChange,
     onPasswordChange,
+    onLastNameChange,
+    onFirstNameChange,
     onSubmitButtonClick
   } = props;
 
-  //  hooks
-  const { handler } = useSignInForm();
+  const { handler } = useSignUpForm();
 
   return (
     <Wrapper>
-      <StyledTypography>Sign In</StyledTypography>
+      <StyledTypography>Sign Up</StyledTypography>
       <InputWrapper>
         <StyledOutlinedInput
           fullWidth
@@ -47,9 +50,25 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
         <StyledOutlinedInput
           fullWidth
           placeholder={"パスワード"}
-          name={"text"}
+          name={"password"}
           value={password}
           changeValue={onPasswordChange}
+        />
+      </InputWrapper>
+      <InputWrapper>
+        <StyledOutlinedInput
+          fullWidth
+          placeholder={"姓"}
+          name={"lastName"}
+          value={lastName}
+          changeValue={onLastNameChange}
+        />
+        <StyledOutlinedInput
+          fullWidth
+          placeholder={"名"}
+          name={"firstName"}
+          value={firstName}
+          changeValue={onFirstNameChange}
         />
       </InputWrapper>
       <ButtonWrapper>
@@ -58,12 +77,12 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
           color="primary"
           onClick={onSubmitButtonClick}
         >
-          サインイン
+          アカウント作成
         </StyledButton>
       </ButtonWrapper>
       <ButtonWrapper>
-        <StyledLink onClick={handler.handleSignUpChangeButtonClick}>
-          アカウントの新規作成はこちら
+        <StyledLink onClick={handler.handleSignInChangeButtonClick}>
+          サインインはこちら
         </StyledLink>
       </ButtonWrapper>
     </Wrapper>
