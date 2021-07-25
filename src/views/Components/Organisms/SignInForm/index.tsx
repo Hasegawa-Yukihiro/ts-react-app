@@ -25,15 +25,6 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
   //  hooks
   const { handler } = useSignInForm();
 
-  const test = async () => {
-    const url = generateUrl("/aaa");
-    const config = generateAxiosRequestConfig();
-
-    const result = await axios.get(url, config);
-
-    return result;
-  };
-
   return (
     <Wrapper>
       <StyledTypography>テスト</StyledTypography>
@@ -57,7 +48,7 @@ export const SignInForm: React.FC<SignInFormProps> = props => {
         <StyledButton
           variant="contained"
           color="primary"
-          onClick={() => test()}
+          onClick={handler.handleSubmitButtonClick}
         >
           サインイン
         </StyledButton>

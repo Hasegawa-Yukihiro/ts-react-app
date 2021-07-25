@@ -10,6 +10,8 @@ class Alias {
       { label: "api", alias: "src/api" },
       { label: "providers", alias: "src/views/Providers" },
       { label: "domain", alias: "src/domain" },
+      { label: "apiDomain", alias: "src/server/apiDomain" },
+      { label: "lib", alias: "src/lib" },
       { label: "@types", alias: "src/@types" },
       { label: "views", alias: "src/views" },
       { label: "utils", alias: "src/utils" },

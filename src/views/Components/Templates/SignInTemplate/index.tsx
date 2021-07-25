@@ -3,7 +3,7 @@ import * as React from "react";
 //  styles
 import { Wrapper } from "./styles";
 
-//  atomic component
+//  component
 import { SignInForm } from "~views/Components/Organisms/SignInForm";
 
 // types
