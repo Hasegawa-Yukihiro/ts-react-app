@@ -2,6 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+//  aliasの読み込み
+const { Alias } = require("../config/scripts/alias.js");
+const alias = new Alias();
+
 const config = {
   /** entry point */
   entry: path.resolve(__dirname, "../src/index.tsx"),
@@ -44,20 +48,8 @@ const config = {
    * resolve オプションはモジュール解決（モジュールの import を解決する仕組み）の設定を変更します。
    */
   resolve: {
-    //  指定した拡張子のファイルは import の際に拡張子を省略することができる
     extensions: [".ts", ".tsx", ".js", ".jsx"],
-    //  エイリアスの指定 , 特定のモジュールをより簡単にインポートすることができる
-    alias: {
-      "~providers": path.resolve(__dirname, "../src/views/Providers"),
-      "~api": path.resolve(__dirname, "../src/api"),
-      "~domain": path.resolve(__dirname, "../src/domain"),
-      "~assets": path.resolve(__dirname, "../src/assets"),
-      "~snackbar": path.resolve(__dirname, "../src/views/Providers/Snackbar/"),
-      "~@types": path.resolve(__dirname, "../src/@types"),
-      "~views": path.resolve(__dirname, "../src/views"),
-      "~utils": path.resolve(__dirname, "../src/utils"),
-      "~src": path.resolve(__dirname, "../src")
-    }
+    alias: alias.toWebpack()
   },
   plugins: [
     /** CSSファイルをjsに含めるのではなく別ファイルで出力する */

@@ -3,3 +3,7 @@ node_modules/
 yarn.lock
 dist/
 yarn-error.log
+.DS_Store
+package-lock.json
+mongo/db/**/*
+mongo/logs/**/*
